@@ -17,7 +17,7 @@ const LiveChat = () => {
       dispatch(
         addMessage({
           name: generateRandomName(),
-          message: makeRandomMessage(20) + " 🚀",
+          message: makeRandomMessage(20),
         })
       );
     }, 2000);
@@ -53,7 +53,7 @@ const LiveChat = () => {
         }}
       >
         <input
-          className="px-2 w-96"
+          className="px-2 w-[80%]"
           type="text"
           value={liveMessage}
           onChange={(e) => {

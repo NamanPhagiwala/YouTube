@@ -51,9 +51,9 @@ const Head = () => {
   };
 
   const getSearchResults = (s) => {
-    console.log("clicked");
     const data = s.split(" ");
     const dataToSend = data.join("+");
+    setSearchQuery(s);
     navigate("/search/" + dataToSend);
   };
   const toggleMenuHandler = () => {
@@ -96,14 +96,15 @@ const Head = () => {
         </div>
         {showSuggestions && (
           <div className="fixed bg-white py-2 px-2 w-[37rem] shadow-lg rounded-lg border border-gray-100">
+            <button onClick={() => getSearchResults("static")}> Test</button>
             <ul>
               {suggestions?.map((s) => (
                 <li
                   className="py-2 px-3 shadow-sm hover:bg-gray-100 cursor-pointer"
-                  // onClick={() => getSearchResults(s)}
                   key={s}
+                  onMouseDown={() => getSearchResults(s)}
                 >
-                  <Link to={`/search/` + s}>🔍 {s}</Link>
+                  🔍 {s}
                 </li>
               ))}
             </ul>

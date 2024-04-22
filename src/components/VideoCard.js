@@ -12,7 +12,7 @@ const VideoCard = ({ info }) => {
       <img
         className="rounded-lg hover:rounded-none"
         alt="thumbnail"
-        src={thumbnails.maxres.url}
+        src={thumbnails.maxres?.url}
       />
       <ul className="p-2">
         <li className="font-bold py-2">{title}</li>
